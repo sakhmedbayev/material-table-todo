@@ -1,4 +1,4 @@
-# Materia-table todo
+# Material-table todo
 
 "Material-table todo" is a simple React.js to-do app that leverages two main libraries: [Material-table](https://material-table.com/#/docs/get-started) and Redux. Live demo is available [here](http://material-table-todo-20191021152105-hostingbucket-dev.s3-website-us-east-1.amazonaws.com)
 
