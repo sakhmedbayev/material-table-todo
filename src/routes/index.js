@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import About from "./About";
-import Todos from "./Todos";
+import TodoList from "./TodoList";
 
 export default function Routes() {
   return (
@@ -11,7 +11,7 @@ export default function Routes() {
           <About />
         </Route>
         <Route path="/">
-          <Todos />
+          <TodoList />
         </Route>
       </Switch>
     </Router>
