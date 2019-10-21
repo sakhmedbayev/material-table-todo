@@ -4,7 +4,8 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import { compareDesc, formatRelative, subDays } from 'date-fns';
+import { compareDesc, formatRelative, subDays } from "date-fns";
+import PropTypes from "prop-types";
 import React from "react";
 
 const useStyles = makeStyles(theme => ({
@@ -49,9 +50,21 @@ export default function NoteList({ notes }) {
 
   return (
     <List className={classes.root}>
-      {notes.sort((a, b) => compareDesc(a.dateAdded, b.dateAdded)).map(note => (
-        <NoteItem key={note.id} note={note} />
-      ))}
+      {notes
+        .sort((a, b) => compareDesc(a.dateAdded, b.dateAdded))
+        .map(note => (
+          <NoteItem key={note.id} note={note} />
+        ))}
     </List>
   );
 }
+
+NoteList.propTypes = {
+  notes: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+      dateAdded: PropTypes.instanceOf(Date)
+    })
+  ),
+};

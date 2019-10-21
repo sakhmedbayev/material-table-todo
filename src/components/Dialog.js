@@ -1,7 +1,8 @@
-import { useMediaQuery, useTheme, makeStyles } from "@material-ui/core";
+import { makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
 import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
+import PropTypes from 'prop-types';
 import React from "react";
 
 const useStyles = makeStyles(theme => ({
@@ -32,3 +33,12 @@ export default function MyDialog({ open, handleDialogClose, children }) {
     </Dialog>
   );
 }
+
+MyDialog.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
+  open: PropTypes.bool.isRequired,
+  handleDialogClose: PropTypes.func.isRequired
+};

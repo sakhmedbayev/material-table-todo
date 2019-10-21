@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import MenuIcon from "@material-ui/icons/Menu";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import React from "react";
 import { mainListItems } from "./listItems";
 
@@ -91,7 +92,6 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-
 export default function Layout({ children, title }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
@@ -149,10 +149,16 @@ export default function Layout({ children, title }) {
       </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="md">
-          {children}
-        </Container>
+        <Container maxWidth="md">{children}</Container>
       </main>
     </div>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]).isRequired,
+  title: PropTypes.string.isRequired
+};

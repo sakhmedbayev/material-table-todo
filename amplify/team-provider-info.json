@@ -1,0 +1,14 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "material-table-todo-dev-20191021151735-authRole",
+            "UnauthRoleArn": "arn:aws:iam::983035549604:role/material-table-todo-dev-20191021151735-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::983035549604:role/material-table-todo-dev-20191021151735-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "material-table-todo-dev-20191021151735-deployment",
+            "UnauthRoleName": "material-table-todo-dev-20191021151735-unauthRole",
+            "StackName": "material-table-todo-dev-20191021151735",
+            "StackId": "arn:aws:cloudformation:us-east-1:983035549604:stack/material-table-todo-dev-20191021151735/9fc25670-f3e3-11e9-a285-0e89924d3e24"
+        }
+    }
+}

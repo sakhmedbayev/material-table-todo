@@ -20,6 +20,7 @@ import React, { forwardRef } from "react";
 import TodoNote from "../containers/TodoNote";
 import NoteDialog from "./Dialog";
 import Filter from "./Filter";
+import PropTypes from "prop-types";
 
 const tableIcons = {
   Add: forwardRef((props, ref) => <AddBox {...props} ref={ref} />),
@@ -131,5 +132,26 @@ function TodoTable({ todos, addTodo, toggleTodo, deleteTodo, editTodo }) {
     </React.Fragment>
   );
 }
+
+TodoTable.propTypes = {
+  todos: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired,
+      completed: PropTypes.bool.isRequired,
+      notes: PropTypes.arrayOf(
+        PropTypes.shape({
+          id: PropTypes.number.isRequired,
+          text: PropTypes.string.isRequired,
+          dateAdded: PropTypes.instanceOf(Date)
+        })
+      )
+    })
+  ),
+  addTodo: PropTypes.func.isRequired,
+  toggleTodo: PropTypes.func.isRequired,
+  deleteTodo: PropTypes.func.isRequired,
+  editTodo: PropTypes.func.isRequired
+};
 
 export default TodoTable;
