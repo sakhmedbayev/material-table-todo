@@ -4,7 +4,7 @@
 
 ## Key features:
 
-- Sortable by "Name" attribute
+- Sortable by a "Name" attribute
 - Searchable
 - Filterable (can filter by "All", "Active", or "Completed" status)
 - In-line editing and deleting
